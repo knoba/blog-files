@@ -1,0 +1,33 @@
+#######################################################################
+#######################################################################
+####
+####	 	Original Author - knoba
+####	   	  Creation Date - 18/10/2017
+####	               Filename - Crackup2.sh
+####		       Filesize - 1268b
+####	       Operating System - Mint 18.1
+####	   Programming Language - sh
+####		  Program Title - Crackup2
+####		Program Version - v.1.0
+####		 External Links - /media/sdb/Bak
+####	    System Requirements - Zip, crontab, cron user permission.
+####
+####
+####
+#######################################################################
+#######################################################################
+####
+####	Program Description & overview:
+####
+####	Back up important files.
+####	Zip home directory, dated archive, to separate mounted drive.
+####	Issue dated text file, to desktop, to confirm or deny.
+####
+####	Cron will strip the %, escape \%, feed it to the shell as %.
+####
+####
+#######################################################################
+#######################################################################
+
+#!/bin/sh
+zip -r /media/sdb/Bak/knoba-home-bak-$(date +\%Y-\%m-\%d).zip /home/knoba > /home/knoba/Desktop/Crackup2-$(date +\%Y-\%m-\%d).txt 2>&1
